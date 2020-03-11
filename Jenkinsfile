@@ -2,7 +2,7 @@
 
 def tagMatchRules = [
   [
-    meTypes: [
+    meTypes: [  
       [meType: 'SERVICE']
     ],
     tags : [
@@ -64,7 +64,7 @@ pipeline {
     
     
     // DO NOT uncomment until 10_01 Lab
-    /*
+    
     stage('Staging Warm Up') {
       steps {
         echo "Waiting for the service to start..."
@@ -103,7 +103,7 @@ pipeline {
         }
         sleep 60
       }
-    }
+    } 
 
     stage('Run production ready e2e check in staging') {
       steps {
@@ -135,7 +135,7 @@ pipeline {
           }
         }
         //sleeping to allow data to arrive in Dynatrace
-        sleep 60
+        sleep 120
         perfSigDynatraceReports(
           envId: 'Dynatrace Tenant', 
           nonFunctionalFailure: 2, 
@@ -143,6 +143,6 @@ pipeline {
         )
       }
     }
-    */
+    
   }
 }
